@@ -1,0 +1,9 @@
+#show
+  .teams
+    %ul.collection.with-header
+      %li.collection-header
+        %h4 Liste des équipes
+      - @teams.each do |team|
+        %li.collection-item
+          = team.name
+          = link_to 'Supprimer', team_path(team.id), method: :delete, class: 'secondary-content'
