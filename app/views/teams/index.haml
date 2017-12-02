@@ -1,9 +1,20 @@
-#show
-  .teams
+#index-team.row
+  .teams.col.s8
     %ul.collection.with-header
       %li.collection-header
-        %h4 Liste des équipes
+        %h4
+          Liste des équipes
+          %a.waves-effect.waves-light.modal-trigger{ href: new_team_path }
+            %i.material-icons add_circle
       - @teams.each do |team|
-        %li.collection-item
+        %li{ class: "collection-item #{'active' if team.short_name == 'FRA' }" }
           = team.name
           = link_to 'Supprimer', team_path(team.id), method: :delete, class: 'secondary-content'
+
+  .new-team.col.s3
+    = form_for @team do |f|
+      = f.label(:short_name)
+      = f.text_field(:short_name, class: 'short_name', maxlength: 3)
+      = f.label(:name)
+      = f.text_field(:name)
+      = f.submit 'Ajouter nation'

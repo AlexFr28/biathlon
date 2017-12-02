@@ -1,7 +1,8 @@
 class TeamsController < ApplicationController
 
   def index
-    @teams = Team.all
+    @teams = Team.all.order(:name)
+    @team = Team.new
   end
 
   def destroy
@@ -10,6 +11,13 @@ class TeamsController < ApplicationController
       team.delete
     end
     redirect_to teams_path
+  end
+
+  def new
+  end
+
+  def create
+    binding.pry
   end
 
 end

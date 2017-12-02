@@ -1,7 +1,19 @@
-#show {
+#index-team {
+
+  .new-team {
+    margin: 30px;
+
+    .short_name {
+      text-transform: uppercase;
+    }
+  }
+
   .teams
   {
-    width: 80%;
-    margin: auto;
+    h4 {
+      a {
+        float: right;
+      }
+    }
   }
 }
