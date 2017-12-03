@@ -15,3 +15,17 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize
+
+(function ($) {
+    $(function () {
+      $('.modal').modal();
+    });
+})(jQuery);
+
+function showAddTeamForm() {
+  $('.teams').animate({
+    marginLeft: "-=" + $('.teams').css('margin-left')
+  }, 1000, function(){
+    $('.new-team').toggleClass('hide');
+  });
+}

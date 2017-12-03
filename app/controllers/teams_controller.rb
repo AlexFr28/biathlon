@@ -13,11 +13,19 @@ class TeamsController < ApplicationController
     redirect_to teams_path
   end
 
-  def new
+  def create
+    team = Team.new(team_params)
+    if team.save
+      redirect_to teams_path
+    else
+      binding.pry
+    end
   end
 
-  def create
-    binding.pry
+  private
+
+  def team_params
+    params.require(:team).permit(:short_name, :name)
   end
 
 end

@@ -1,19 +1,49 @@
 #index-team {
 
-  .new-team {
-    margin: 30px;
-
-    .short_name {
-      text-transform: uppercase;
-    }
-  }
-
   .teams
   {
-    h4 {
+    li.collection-header {
+      display: flex;
+
+      h4 {
+        width: 100%;
+      }
+
       a {
         float: right;
+        margin: auto;
+
+        i {
+          font-size: 35px;
+        }
       }
     }
+
+    li.my-selection {
+      color: blue;
+    }
+
+    li.collection-item {
+      display: flex;
+
+      .flag {
+        height: 20px;
+        margin: auto 10px auto 0;
+      }
+
+      span {
+        width: 100%;
+      }
+
+      .secondary-content {
+        color: red;
+      }
+    }
+  }
+}
+
+.new-team {
+  .short_name {
+    text-transform: uppercase;
   }
 }

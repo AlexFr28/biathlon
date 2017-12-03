@@ -1,20 +1,23 @@
 #index-team.row
-  .teams.col.s8
+  .teams.col.s6.offset-s3
     %ul.collection.with-header
       %li.collection-header
         %h4
           Liste des équipes
-          %a.waves-effect.waves-light.modal-trigger{ href: new_team_path }
-            %i.material-icons add_circle
+        %a.waves-effect.waves-light.modal-trigger{ href: "#modal-addTeamForm" }
+          %i.material-icons add_circle
       - @teams.each do |team|
-        %li{ class: "collection-item #{'active' if team.short_name == 'FRA' }" }
-          = team.name
+        %li{ class: "collection-item #{'my-selection' if team.short_name == 'FRA' }", onclick: "showAddTeamForm();" }
+          = image_tag("flag/#{team.short_name.downcase}", class: 'flag') if File.exist?("#{Rails.root}/app/assets/images/flag/#{team.short_name.downcase}.png")
+          %span= team.name
           = link_to 'Supprimer', team_path(team.id), method: :delete, class: 'secondary-content'
 
-  .new-team.col.s3
-    = form_for @team do |f|
+#modal-addTeamForm.modal.new-team.col.s3.offset-s1
+  = form_for @team do |f|
+    .modal-content
       = f.label(:short_name)
       = f.text_field(:short_name, class: 'short_name', maxlength: 3)
       = f.label(:name)
       = f.text_field(:name)
-      = f.submit 'Ajouter nation'
+    .modal-footer
+      = f.submit('Ajouter', class: 'modal-close btn' )
