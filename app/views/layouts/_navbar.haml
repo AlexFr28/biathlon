@@ -6,3 +6,8 @@
           %i.material-icons home
       %li
         = link_to 'Nations', teams_path
+
+    %ul#nav-mobile.right.hide-on-med-and-down
+      %li
+        %a{ onclick: "changeEditMode();" }
+          %i.material-icons edit

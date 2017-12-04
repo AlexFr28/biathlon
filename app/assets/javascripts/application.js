@@ -16,6 +16,10 @@
 //= require_tree .
 //= require materialize
 
+function changeEditMode() {
+  $('.editable').toggleClass('hide');
+}
+
 (function ($) {
     $(function () {
       $('.modal').modal();

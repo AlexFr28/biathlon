@@ -1,18 +1,18 @@
 #index-team.row
-  .teams.col.s6.offset-s3
+  .teams.col.l6.offset-l3.s12
     %ul.collection.with-header
       %li.collection-header
         %h4
           Liste des équipes
-        %a.waves-effect.waves-light.modal-trigger{ href: "#modal-addTeamForm" }
+        %a.waves-effect.waves-light.modal-trigger.editable.hide{ href: "#modal-addTeamForm" }
           %i.material-icons add_circle
       - @teams.each do |team|
         %li{ class: "collection-item #{'my-selection' if team.short_name == 'FRA' }", onclick: "showAddTeamForm();" }
           = image_tag("flag/#{team.short_name.downcase}", class: 'flag') if File.exist?("#{Rails.root}/app/assets/images/flag/#{team.short_name.downcase}.png")
           %span= team.name
-          = link_to 'Supprimer', team_path(team.id), method: :delete, class: 'secondary-content'
+          = link_to 'Supprimer', team_path(team.id), method: :delete, class: 'secondary-content editable hide'
 
-#modal-addTeamForm.modal.new-team.col.s3.offset-s1
+#modal-addTeamForm.modal.new-team.col.l3.offset-l1
   = form_for @team do |f|
     .modal-content
       = f.label(:short_name)
