@@ -3,13 +3,14 @@
     %ul.collection.with-header
       %li.collection-header
         %h4
-          Liste des équipes
+          Classement des nations
         %a.waves-effect.waves-light.modal-trigger.editable.hide{ href: "#modal-addTeamForm" }
           %i.material-icons add_circle
       - @teams.each do |team|
         %li{ class: "collection-item #{'my-selection' if team.short_name == 'FRA' }", onclick: "showAddTeamForm();" }
-          = image_tag("flag/#{team.short_name.downcase}", class: 'flag') if File.exist?("#{Rails.root}/app/assets/images/flag/#{team.short_name.downcase}.png")
-          %span= team.name
+          .image
+            = image_tag("flag/#{team.short_name.downcase}", class: 'flag') if File.exist?("#{Rails.root}/app/assets/images/flag/#{team.short_name.downcase}.png")
+          .nation_name= team.name
           = link_to 'Supprimer', team_path(team.id), method: :delete, class: 'secondary-content editable hide'
 
 #modal-addTeamForm.modal.new-team.col.l3.offset-l1

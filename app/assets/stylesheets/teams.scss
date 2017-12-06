@@ -7,8 +7,8 @@
 
       h4 {
         width: 100%;
-
-        
+        text-align: center;
+        font-size: 4rem;
       }
 
       a {
@@ -27,14 +27,16 @@
 
     li.collection-item {
       display: flex;
+      line-height: 2rem;
 
       .flag {
         height: 20px;
-        margin: auto 10px auto 0;
+        margin: auto 15px auto 0;
       }
 
-      span {
+      .nation_name {
         width: 100%;
+        font-size: 2rem;
       }
 
       .secondary-content {
