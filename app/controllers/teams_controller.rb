@@ -2,6 +2,9 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all.order(:name)
+    @athletes = Athlete.all.order(:last_name)
+
+    # For create Team
     @team = Team.new
   end
 
@@ -15,6 +18,7 @@ class TeamsController < ApplicationController
 
   def create
     team = Team.new(team_params)
+    team.short_name = team.short_name.upcase
     if team.save
       redirect_to teams_path
     else

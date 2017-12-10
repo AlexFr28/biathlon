@@ -15,3 +15,46 @@
  *= require material_icons
  */
 @import "materialize";
+
+
+.lists {
+  .collection-header {
+    display: flex;
+  }
+  
+  li.collection-header {
+
+    h4 {
+      width: 100%;
+      text-align: center;
+      font-size: 3.5rem;
+    }
+
+    a {
+      float: right;
+      margin: auto;
+
+      i {
+        font-size: 35px;
+      }
+    }
+  }
+
+  li.my-selection {
+    color: blue;
+  }
+
+  li.collection-item {
+    display: flex;
+    line-height: 2rem;
+
+    .nation_name {
+      width: 100%;
+      font-size: 2rem;
+    }
+
+    .secondary-content {
+      color: red;
+    }
+  }
+}

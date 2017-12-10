@@ -1,0 +1,11 @@
+#modal-addAthleteForm.modal.new-athlete.col.l3.offset-l1
+  = form_for @athlete do |f|
+    .modal-content
+      .input-field
+        = f.label(:last_name, "Nom")
+        = f.text_field(:last_name)
+      .input-field
+        = f.label(:first_name, "Prénom")
+        = f.text_field(:first_name)
+    .modal-footer
+      = f.submit('Ajouter', class: 'modal-close btn')

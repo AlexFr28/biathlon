@@ -1,24 +1,30 @@
 #index-team.row
-  .teams.col.l6.offset-l3.s12
+  .teams.col.l6.offset-l3.s12.lists
     %ul.collection.with-header
       %li.collection-header
         %h4
-          Classement des nations
+          Les nations
         %a.waves-effect.waves-light.modal-trigger.editable.hide{ href: "#modal-addTeamForm" }
           %i.material-icons add_circle
       - @teams.each do |team|
-        %li{ class: "collection-item #{'my-selection' if team.short_name == 'FRA' }", onclick: "showAddTeamForm();" }
-          .image
+        %li{ class: "collection-item #{'my-selection' if team.short_name == 'FRA' }", onclick: "showAthletes();" }
+          .div-flag
             = image_tag("flag/#{team.short_name.downcase}", class: 'flag') if File.exist?("#{Rails.root}/app/assets/images/flag/#{team.short_name.downcase}.png")
           .nation_name= team.name
-          = link_to 'Supprimer', team_path(team.id), method: :delete, class: 'secondary-content editable hide'
+          = link_to team_path(team.id), method: :delete, class: 'secondary-content editable hide' do
+            %i.material-icons delete
 
-#modal-addTeamForm.modal.new-team.col.l3.offset-l1
-  = form_for @team do |f|
-    .modal-content
-      = f.label(:short_name)
-      = f.text_field(:short_name, class: 'short_name', maxlength: 3)
-      = f.label(:name)
-      = f.text_field(:name)
-    .modal-footer
-      = f.submit('Ajouter', class: 'modal-close btn' )
+  .athletes.col.l4.offset-l1.hide
+    %ul.collection.with-header
+      %li.collection-header
+        %h4
+          Membres
+        %a.waves-effect.waves-light.modal-trigger.editable.hide{ href: "#modal-addAthleteForm" }
+          %i.material-icons add_circle
+      - @athletes.each do |athlete|
+        %li.collection-item
+          .athlete_name= "#{athlete.last_name.upcase} #{athlete.first_name}"
+          = link_to 'Supprimer', athlete_path(athlete.id), method: :delete, class: 'secondary-content editable hide'
+
+
+= render partial: 'teams/modal_add_team'

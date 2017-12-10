@@ -1,48 +1,15 @@
 #index-team {
-
-  .teams
-  {
-    li.collection-header {
-      display: flex;
-
-      h4 {
-        width: 100%;
-        text-align: center;
-        font-size: 4rem;
-      }
-
-      a {
-        float: right;
-        margin: auto;
-
-        i {
-          font-size: 35px;
-        }
-      }
+  .div-flag {
+    width: 50px;
+    margin-right: 15px;
+    text-align: center;
+    display: flex;
+    
+    .flag {
+      height: 20px;
+      margin: auto;
     }
 
-    li.my-selection {
-      color: blue;
-    }
-
-    li.collection-item {
-      display: flex;
-      line-height: 2rem;
-
-      .flag {
-        height: 20px;
-        margin: auto 15px auto 0;
-      }
-
-      .nation_name {
-        width: 100%;
-        font-size: 2rem;
-      }
-
-      .secondary-content {
-        color: red;
-      }
-    }
   }
 }
 

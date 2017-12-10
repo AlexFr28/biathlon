@@ -20,16 +20,22 @@ function changeEditMode() {
   $('.editable').toggleClass('hide');
 }
 
-(function ($) {
-    $(function () {
-      $('.modal').modal();
-    });
-})(jQuery);
+// (function ($) {
+//     $(function () {
+//       $('.modal').modal();
+//     });
+// })(jQuery);
 
-function showAddTeamForm() {
+$(document).ready(function(){
+  $('.modal').modal();
+  // $('.modal-trigger').modal();
+  // $('.modal-trigger').leanModal();
+});
+
+function showAthletes() {
   $('.teams').animate({
     marginLeft: "-=" + $('.teams').css('margin-left')
   }, 1000, function(){
-    $('.new-team').toggleClass('hide');
+    $('.athletes').toggleClass('hide');
   });
 }

@@ -1,0 +1,11 @@
+#modal-addTeamForm.modal.new-team.col.l3.offset-l1
+  = form_for @team do |f|
+    .modal-content
+      .input-field
+        = f.text_field(:short_name, class: 'short_name', maxlength: 3)
+        = f.label(:short_name, "Abréviation")
+      .input-field
+        = f.text_field(:name)
+        = f.label(:name, "Nom")
+    .modal-footer
+      = f.submit('Ajouter', class: 'modal-close btn')

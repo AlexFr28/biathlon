@@ -1,0 +1,15 @@
+#index-athlete.row
+  .athletes.col.l6.offset-l3.s12.lists
+    %ul.collection.with-header
+      %li.collection-header
+        %h4
+          Les athlètes
+        %a.waves-effect.waves-light.modal-trigger.editable.hide{ href: "#modal-addAthleteForm" }
+          %i.material-icons add_circle
+      - @athletes.each do |athlete|
+        %li{ class: "collection-item #{'my-selection' if athlete.team.short_name == 'FRA' }", onclick: "showAthletes();" }
+          .athlete_name= "#{athlete.last_name} #{athlete.first_name}"
+          = link_to athlete_path(athlete.id), method: :delete, class: 'secondary-content editable hide' do
+            %i.material-icons delete
+
+= render partial: 'athletes/modal_add_athlete'
