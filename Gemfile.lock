@@ -39,6 +39,11 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    awesome_print (1.8.0)
+    awesome_rails_console (0.4.0)
+      awesome_print
+      pry-rails
+      railties
     builder (3.2.3)
     byebug (9.0.6)
     coderay (1.1.2)
@@ -91,6 +96,8 @@ GEM
     pry (0.11.0)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     puma (3.7.1)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -166,6 +173,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_rails_console
   byebug
   coffee-rails (~> 4.2)
   haml
