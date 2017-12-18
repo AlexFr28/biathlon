@@ -51,6 +51,18 @@ kontiolahti = Stage.create(start_date: DateTime.new(2018, 3, 8), end_date: DateT
 holmenkollen = Stage.create(start_date: DateTime.new(2018, 3, 15), end_date: DateTime.new(2018, 3, 18), country: 'Norvège', city: 'Holmenkollen')
 tyumen = Stage.create(start_date: DateTime.new(2018, 3, 22), end_date: DateTime.new(2018, 3, 25), country: 'Russie', city: 'Tyumen')
 
+# EVENTS
+single_mixed_relay_ostersund = Event.create(date: DateTime.new(2017, 11, 26), stage: ostersund, format: Event.formats[:single_mixed_relay], gender: Event.genders[:mixed])
+Event.create(date: DateTime.new(2017, 11, 26), stage: ostersund, format: Event.formats[:mixed_relais], gender: Event.genders[:mixed])
+Event.create(date: DateTime.new(2017, 11, 29), stage: ostersund, format: Event.formats[:individual], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2017, 11, 30), stage: ostersund, format: Event.formats[:individual], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2017, 12, 1), stage: ostersund, format: Event.formats[:sprint], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2017, 12, 2), stage: ostersund, format: Event.formats[:sprint], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2017, 12, 3), stage: ostersund, format: Event.formats[:pursuit], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2017, 12, 3), stage: ostersund, format: Event.formats[:pursuit], gender: Event.genders[:masculine])
+
+
+
 # Nathan Smith
 # Anton Shipulin
 # Christian Gow

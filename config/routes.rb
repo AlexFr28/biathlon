@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :administration, as: 'admin', path: 'administration' do
     resources :teams, path: 'nations', only: [:index]
-    resources :stages, path: 'etapes', only: [:index]
+    resources :stages, path: 'etapes', only: [:index, :show]
   end
 
 end
