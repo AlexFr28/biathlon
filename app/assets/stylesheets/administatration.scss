@@ -1,0 +1,68 @@
+#admin-teams {
+  h2 {
+    text-align: center;
+  }
+
+  .add-team {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
+
+  ul#collection-list {
+    overflow-y: auto;
+  }
+
+  .collapsible-header, .bloc-header {
+    display: flex;
+    -webkit-tap-highlight-color: transparent;
+    line-height: 1.5;
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .div-flag {
+      width: 50px;
+      margin-right: 15px;
+      text-align: center;
+      display: flex;
+      
+      .flag {
+        height: 20px;
+        margin: auto;
+      }
+    }
+
+    .nation_name {
+      font-size: 2rem;
+    }
+
+    span.badge {
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: 1rem;
+    }
+  }
+
+  .collapsible-body, .bloc-body {
+    display: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .input-field {
+      font-size: 2rem;
+    }
+  }
+.bloc-body.show {
+  display: block;
+}
+
+  #addTeamHeader.collapsible-header {
+    font-size: 1.6rem;
+
+    i {
+      margin: auto 15px;
+    }
+  }
+}

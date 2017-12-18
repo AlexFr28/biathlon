@@ -1,0 +1,43 @@
+#admin-teams
+  %a.add-team{ onclick: 'showAddTeam();' }
+    %i.material-icons.medium add_circle_outline
+  %h2 Gestion des nations
+  .row
+    .col.l6.offset-l3.s10.offset-s1
+      %ul#collection-list.collapsible{ "data-collapsible" => "accordion" }
+        - @teams.each_with_index do |team, index|
+          %li
+            %div{class: "bloc-header item#{index}"}
+              .div-flag.unclickable{ onclick: 'return false;' }
+                = image_tag("flag/#{team.short_name.downcase}", class: 'flag') if File.exist?("#{Rails.root}/app/assets/images/flag/#{team.short_name.downcase}.png")
+              .nation_name.unclickable= team.name
+              %span.badge
+                %i.material-icons.flag-edit edit
+                - if team.athletes.empty?
+                  = link_to team_path(team.id), method: :delete, class: 'secondary-content', title: "Supprimer cette nation" do
+                    %i.material-icons delete
+                - else
+                  %i.material-icons{ title: 'Suppression impossible : des athlètes sont associés à cette nation' } lock_outline
+            %div{class: "collapsible-body bloc-body item#{index}"}
+              = form_for team do |f|
+                .input-field.col.l4.s4
+                  = f.text_field(:short_name, class: 'short_name', maxlength: 3)
+                  = f.label(:short_name, "Abréviation")
+                .input-field.col.l8.s8
+                  = f.text_field(:name)
+                  = f.label(:name, "Nom")
+                = f.submit('Modifier', class: 'btn')
+      %ul#formAddTeam.collapsible
+        %li.new-team
+          #addTeamHeader.collapsible-header.active{ onclick: "return false;" }
+            %i.material-icons.medium add
+            Ajouter une nation
+          #addTeamBody.collapsible-body{  }
+            = form_for @team do |f|
+              .input-field.col.l4
+                = f.text_field(:short_name, class: 'short_name', maxlength: 3)
+                = f.label(:short_name, "Abréviation")
+              .input-field.col.l8
+                = f.text_field(:name)
+                = f.label(:name, "Nom")
+              = f.submit('Ajouter', class: 'modal-close btn')

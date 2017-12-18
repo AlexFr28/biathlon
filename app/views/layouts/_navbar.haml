@@ -1,15 +1,20 @@
 %nav
   .nav-wrapper
-    %ul#nav-mobile.left.hide-on-med-and-down
-      %li
-        %a{href: root_path }
-          %i.material-icons home
-      %li
-        = link_to 'Nations', teams_path
-      %li
-        = link_to 'Athlètes', athletes_path
+    - if @admin
+      %ul
+        %li
+          = link_to 'Nations', admin_teams_path
+    - else
+      %ul#nav-mobile.left.hide-on-med-and-down
+        %li
+          %a{ href: root_path }
+            %i.material-icons home
+        %li
+          = link_to 'Nations', teams_path
+        %li
+          = link_to 'Athlètes', athletes_path
 
-    %ul#nav-mobile.right.hide-on-med-and-down
-      %li
-        %a{ onclick: "changeEditMode();" }
-          %i.material-icons edit
+      %ul#nav-mobile.right.hide-on-med-and-down
+        %li
+          %a{ onclick: "changeEditMode();" }
+            %i.material-icons edit
