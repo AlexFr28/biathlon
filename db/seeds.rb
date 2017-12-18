@@ -40,6 +40,17 @@ bailey = Athlete.create(first_name: 'Lowell', last_name: 'Bailey', team_id: usa.
 hofer = Athlete.create(first_name: 'Lukas', last_name: 'Hofer', team_id: italie.id)
 
 
+# STAGES
+ostersund = Stage.create(start_date: DateTime.new(2017, 11, 26), end_date: DateTime.new(2017, 12, 3), country: 'Suède', city: 'Östersund')
+hochfilzen = Stage.create(start_date: DateTime.new(2017, 12, 8), end_date: DateTime.new(2017, 12, 10), country: 'Autriche', city: 'Hochfilzen')
+annecy = Stage.create(start_date: DateTime.new(2017, 12, 14), end_date: DateTime.new(2017, 12, 17), country: 'France', city: 'Annecy - Le Grand Bornand')
+oberhof = Stage.create(start_date: DateTime.new(2018, 1, 4), end_date: DateTime.new(2018, 1, 7), country: 'Allemagne', city: 'Oberhof')
+ruhpolding = Stage.create(start_date: DateTime.new(2018, 1, 10), end_date: DateTime.new(2018, 1, 14), country: 'Allemagne', city: 'Ruhpolding')
+anterselva = Stage.create(start_date: DateTime.new(2018, 1, 18), end_date: DateTime.new(2018, 1, 21), country: 'Italie', city: 'Anterselva')
+kontiolahti = Stage.create(start_date: DateTime.new(2018, 3, 8), end_date: DateTime.new(2018, 3, 11), country: 'Finlande', city: 'Kontiolahti')
+holmenkollen = Stage.create(start_date: DateTime.new(2018, 3, 15), end_date: DateTime.new(2018, 3, 18), country: 'Norvège', city: 'Holmenkollen')
+tyumen = Stage.create(start_date: DateTime.new(2018, 3, 22), end_date: DateTime.new(2018, 3, 25), country: 'Russie', city: 'Tyumen')
+
 # Nathan Smith
 # Anton Shipulin
 # Christian Gow
