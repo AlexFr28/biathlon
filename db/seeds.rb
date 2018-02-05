@@ -41,19 +41,19 @@ hofer = Athlete.create(first_name: 'Lukas', last_name: 'Hofer', team_id: italie.
 
 
 # STAGES
-ostersund = Stage.create(start_date: DateTime.new(2017, 11, 26), end_date: DateTime.new(2017, 12, 3), country: 'Suède', city: 'Östersund')
-hochfilzen = Stage.create(start_date: DateTime.new(2017, 12, 8), end_date: DateTime.new(2017, 12, 10), country: 'Autriche', city: 'Hochfilzen')
-annecy = Stage.create(start_date: DateTime.new(2017, 12, 14), end_date: DateTime.new(2017, 12, 17), country: 'France', city: 'Annecy - Le Grand Bornand')
-oberhof = Stage.create(start_date: DateTime.new(2018, 1, 4), end_date: DateTime.new(2018, 1, 7), country: 'Allemagne', city: 'Oberhof')
-ruhpolding = Stage.create(start_date: DateTime.new(2018, 1, 10), end_date: DateTime.new(2018, 1, 14), country: 'Allemagne', city: 'Ruhpolding')
-anterselva = Stage.create(start_date: DateTime.new(2018, 1, 18), end_date: DateTime.new(2018, 1, 21), country: 'Italie', city: 'Anterselva')
-kontiolahti = Stage.create(start_date: DateTime.new(2018, 3, 8), end_date: DateTime.new(2018, 3, 11), country: 'Finlande', city: 'Kontiolahti')
-holmenkollen = Stage.create(start_date: DateTime.new(2018, 3, 15), end_date: DateTime.new(2018, 3, 18), country: 'Norvège', city: 'Holmenkollen')
-tyumen = Stage.create(start_date: DateTime.new(2018, 3, 22), end_date: DateTime.new(2018, 3, 25), country: 'Russie', city: 'Tyumen')
+ostersund = Stage.create(start_date: DateTime.new(2017, 11, 26), end_date: DateTime.new(2017, 12, 3), country: 'SWE', city: 'Östersund')
+hochfilzen = Stage.create(start_date: DateTime.new(2017, 12, 8), end_date: DateTime.new(2017, 12, 10), country: 'AUT', city: 'Hochfilzen')
+annecy = Stage.create(start_date: DateTime.new(2017, 12, 14), end_date: DateTime.new(2017, 12, 17), country: 'FRA', city: 'Annecy - Le Grand Bornand')
+oberhof = Stage.create(start_date: DateTime.new(2018, 1, 4), end_date: DateTime.new(2018, 1, 7), country: 'ALL', city: 'Oberhof')
+ruhpolding = Stage.create(start_date: DateTime.new(2018, 1, 10), end_date: DateTime.new(2018, 1, 14), country: 'ALL', city: 'Ruhpolding')
+anterselva = Stage.create(start_date: DateTime.new(2018, 1, 18), end_date: DateTime.new(2018, 1, 21), country: 'ITA', city: 'Anterselva')
+kontiolahti = Stage.create(start_date: DateTime.new(2018, 3, 8), end_date: DateTime.new(2018, 3, 11), country: 'FIN', city: 'Kontiolahti')
+holmenkollen = Stage.create(start_date: DateTime.new(2018, 3, 15), end_date: DateTime.new(2018, 3, 18), country: 'NOR', city: 'Holmenkollen')
+tyumen = Stage.create(start_date: DateTime.new(2018, 3, 22), end_date: DateTime.new(2018, 3, 25), country: 'RUS', city: 'Tyumen')
 
 # EVENTS
 single_mixed_relay_ostersund = Event.create(date: DateTime.new(2017, 11, 26), stage: ostersund, format: Event.formats[:single_mixed_relay], gender: Event.genders[:mixed])
-Event.create(date: DateTime.new(2017, 11, 26), stage: ostersund, format: Event.formats[:mixed_relais], gender: Event.genders[:mixed])
+Event.create(date: DateTime.new(2017, 11, 26), stage: ostersund, format: Event.formats[:mixed_relay], gender: Event.genders[:mixed])
 Event.create(date: DateTime.new(2017, 11, 29), stage: ostersund, format: Event.formats[:individual], gender: Event.genders[:female])
 Event.create(date: DateTime.new(2017, 11, 30), stage: ostersund, format: Event.formats[:individual], gender: Event.genders[:masculine])
 Event.create(date: DateTime.new(2017, 12, 1), stage: ostersund, format: Event.formats[:sprint], gender: Event.genders[:female])
@@ -61,6 +61,61 @@ Event.create(date: DateTime.new(2017, 12, 2), stage: ostersund, format: Event.fo
 Event.create(date: DateTime.new(2017, 12, 3), stage: ostersund, format: Event.formats[:pursuit], gender: Event.genders[:female])
 Event.create(date: DateTime.new(2017, 12, 3), stage: ostersund, format: Event.formats[:pursuit], gender: Event.genders[:masculine])
 
+Event.create(date: DateTime.new(2017, 12, 8), stage: hochfilzen, format: Event.formats[:sprint], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2017, 12, 8), stage: hochfilzen, format: Event.formats[:sprint], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2017, 12, 9), stage: hochfilzen, format: Event.formats[:pursuit], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2017, 12, 9), stage: hochfilzen, format: Event.formats[:pursuit], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2017, 12, 10), stage: hochfilzen, format: Event.formats[:relay], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2017, 12, 10), stage: hochfilzen, format: Event.formats[:relay], gender: Event.genders[:female])
+
+Event.create(date: DateTime.new(2017, 12, 14), stage: annecy, format: Event.formats[:sprint], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2017, 12, 15), stage: annecy, format: Event.formats[:sprint], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2017, 12, 16), stage: annecy, format: Event.formats[:pursuit], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2017, 12, 16), stage: annecy, format: Event.formats[:pursuit], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2017, 12, 17), stage: annecy, format: Event.formats[:mass_start], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2017, 12, 17), stage: annecy, format: Event.formats[:mass_start], gender: Event.genders[:masculine])
+
+Event.create(date: DateTime.new(2018, 1, 4), stage: oberhof, format: Event.formats[:sprint], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 1, 5), stage: oberhof, format: Event.formats[:sprint], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 1, 6), stage: oberhof, format: Event.formats[:pursuit], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 1, 6), stage: oberhof, format: Event.formats[:pursuit], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 1, 7), stage: oberhof, format: Event.formats[:relay], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 1, 7), stage: oberhof, format: Event.formats[:relay], gender: Event.genders[:masculine])
+
+Event.create(date: DateTime.new(2018, 1, 10), stage: ruhpolding, format: Event.formats[:individual], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 1, 11), stage: ruhpolding, format: Event.formats[:individual], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 1, 12), stage: ruhpolding, format: Event.formats[:relay], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 1, 13), stage: ruhpolding, format: Event.formats[:relay], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 1, 14), stage: ruhpolding, format: Event.formats[:mass_start], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 1, 14), stage: ruhpolding, format: Event.formats[:mass_start], gender: Event.genders[:female])
+
+Event.create(date: DateTime.new(2018, 1, 18), stage: anterselva, format: Event.formats[:sprint], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 1, 19), stage: anterselva, format: Event.formats[:sprint], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 1, 20), stage: anterselva, format: Event.formats[:pursuit], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 1, 20), stage: anterselva, format: Event.formats[:pursuit], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 1, 21), stage: anterselva, format: Event.formats[:mass_start], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 1, 21), stage: anterselva, format: Event.formats[:mass_start], gender: Event.genders[:masculine])
+
+Event.create(date: DateTime.new(2018, 3, 8), stage: kontiolahti, format: Event.formats[:sprint], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 3, 9), stage: kontiolahti, format: Event.formats[:sprint], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 3, 10), stage: kontiolahti, format: Event.formats[:single_mixed_relay], gender: Event.genders[:mixed])
+Event.create(date: DateTime.new(2018, 3, 10), stage: kontiolahti, format: Event.formats[:mixed_relay], gender: Event.genders[:mixed])
+Event.create(date: DateTime.new(2018, 3, 11), stage: kontiolahti, format: Event.formats[:mass_start], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 3, 11), stage: kontiolahti, format: Event.formats[:mass_start], gender: Event.genders[:female])
+
+Event.create(date: DateTime.new(2018, 3, 15), stage: holmenkollen, format: Event.formats[:sprint], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 3, 15), stage: holmenkollen, format: Event.formats[:sprint], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 3, 17), stage: holmenkollen, format: Event.formats[:relay], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 3, 17), stage: holmenkollen, format: Event.formats[:pursuit], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 3, 18), stage: holmenkollen, format: Event.formats[:pursuit], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 3, 18), stage: holmenkollen, format: Event.formats[:relay], gender: Event.genders[:masculine])
+
+Event.create(date: DateTime.new(2018, 3, 22), stage: tyumen, format: Event.formats[:sprint], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 3, 23), stage: tyumen, format: Event.formats[:sprint], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 3, 24), stage: tyumen, format: Event.formats[:pursuit], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 3, 24), stage: tyumen, format: Event.formats[:pursuit], gender: Event.genders[:female])
+Event.create(date: DateTime.new(2018, 3, 25), stage: tyumen, format: Event.formats[:mass_start], gender: Event.genders[:masculine])
+Event.create(date: DateTime.new(2018, 3, 25), stage: tyumen, format: Event.formats[:mass_start], gender: Event.genders[:female])
 
 
 # Nathan Smith
@@ -94,3 +149,14 @@ Event.create(date: DateTime.new(2017, 12, 3), stage: ostersund, format: Event.fo
 # - mass start femmes : https://www.lequipe.fr/lachainelequipe/video/evenements/biathlon-replay-mass-start-femmes-le-grand-bornand/x6btajr
 # - mass start hommes : https://www.lequipe.fr/lachainelequipe/video/evenements/biathon-replay-mass-start-hommes-grand-bornand/x6busrh
 
+# Oberhof 2017-18 :
+# - sprint femmes : https://www.lequipe.fr/lachainelequipe/video/evenements/biathlon-replay-sprint-femmes-oberhof/x6co6ui
+# - sprint hommes : https://www.lequipe.fr/lachainelequipe/video/evenements/biathlon-replay-sprint-hommes-oberhof/x6coyar
+# - poursuite femmes : 
+# - poursuite hommes : 
+# - relais femmes : https://www.lequipe.fr/lachainelequipe/video/evenements/biathlon-replay-relais-femmes-d-oberhof/x6crjra
+# - relais hommes : https://www.lequipe.fr/lachainelequipe/video/evenements/biathlon-replay-relais-hommes-oberhof/x6csg7c
+
+# Ruhpolding 2017-18 :
+# - individuel hommes : 
+# - individuel femmes : 

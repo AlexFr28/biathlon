@@ -54,15 +54,66 @@
       font-size: 2rem;
     }
   }
-.bloc-body.show {
-  display: block;
-}
+
+  .bloc-body.show {
+    display: block;
+  }
 
   #addTeamHeader.collapsible-header {
     font-size: 1.6rem;
 
     i {
       margin: auto 15px;
+    }
+  }
+}
+
+#edit-admin-stage {
+  .input-field {
+    label, input {
+      font-size: 3rem;
+    }
+
+    input {
+      height: 8rem;
+    }
+  }
+
+  .picker__frame {
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+#stage-index {
+  span {
+    margin: auto 10px auto 0;
+  }
+
+  .stages {
+    .flag {
+      height: 20px;
+      margin: auto 10px auto 0;
+    }
+
+    .flag-edit {
+      margin-left: auto;
+    }
+  }
+
+  .events {
+    padding: 1rem 2rem;
+
+    .event {
+      display: flex;
+
+      .done {
+        
+      }
+
+      .text {
+        margin: auto 10px auto 0;
+      }
     }
   }
 }

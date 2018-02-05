@@ -1,5 +1,18 @@
-.row
-  %ul.collection.col.l6.offset-l3
+#stage-index.row
+  %ul.collapsible.col.l6.offset-l3
     - @stages.each do |stage|
-      %li.collection-item
-        = stage.city
+      %li
+        .collapsible-header.stages
+          %span= stage.humanize_date
+          = image_tag("flag/#{stage.country.downcase}", class: 'flag') if File.exist?("#{Rails.root}/app/assets/images/flag/#{stage.country.downcase}.png")
+          %span= stage.city
+          = link_to root_path, class: 'flag-edit' do
+            %i.material-icons edit
+        .collapsible-body.events
+          %ul
+            - now = DateTime.now
+            - stage.events.each do |event|
+              %li.event
+                .text
+                  = event.humanize_date
+                  = event.humanize.capitalize
